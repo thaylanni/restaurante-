@@ -1,6 +1,7 @@
 package src;
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         // Criando opções de comida (itens do menu)
