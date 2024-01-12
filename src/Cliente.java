@@ -1,3 +1,4 @@
+package src;
 public class Cliente {
     //aqui são os atributos
     private String nome;
