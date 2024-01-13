@@ -1,4 +1,4 @@
-package src;
+
 class Pagamento {
     String formaPagamento;
 
