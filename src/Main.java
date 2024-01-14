@@ -8,10 +8,11 @@ public class Main {
         ItemMenu pizzaPortuguesa = new ItemMenu("Pizza Portuguesa", 35.00);
         ItemMenu pizzaNordestina = new ItemMenu("Pizza Nordestina", 60.00);
         ItemMenu pizzaCalabresa = new ItemMenu("Pizza Calabresa", 30.00);
-
+        
+        
         // Usando Scanner para receber entrada do usuário
         Scanner scanner = new Scanner(System.in);
-
+        
         // Solicitando o nome do cliente
         System.out.print("Digite seu nome: ");
         String nomeCliente = scanner.nextLine();
@@ -56,6 +57,7 @@ public class Main {
                     System.out.println("Opção inválida. Tente novamente.");
                     continue;
             }
+            
 
             System.out.print("Quantidade desejada: ");
             int quantidade = scanner.nextInt();
@@ -73,6 +75,17 @@ public class Main {
         System.out.print("Deseja confirmar o pedido? (1 para sim, 2 para não): ");
         int confirmar = scanner.nextInt();
         scanner.nextLine(); // Limpar o buffer do scanner
+
+        // Criando atendente
+Atendente atendente = new Atendente();
+
+// Adicionando comandos à fila
+atendente.adicionarComando(new ComandoAdicionarItem(pedidoCliente1, pizzaPortuguesa, 2));
+atendente.adicionarComando(new ComandoAdicionarItem(pedidoCliente1, pizzaNordestina, 3));
+
+// Processando os pedidos
+atendente.processarPedidos();
+
 
         if (confirmar == 1) {
             // Solicitando forma de pagamento
@@ -101,7 +114,7 @@ public class Main {
 
             // Criando objeto Pagamento
             Pagamento pagamento = new Pagamento(formaPagamento);
-
+ 
             // Exibindo detalhes do pagamento
             pagamento.exibirDetalhesPagamento();
             System.out.println("Agradecemos pelo seu pedido!");
@@ -109,6 +122,7 @@ public class Main {
             System.out.println("Pedido cancelado. Obrigado!");
         }
 
+     
         // Fechando o Scanner
         scanner.close();
     }
