@@ -76,16 +76,7 @@ public class Main {
         int confirmar = scanner.nextInt();
         scanner.nextLine(); // Limpar o buffer do scanner
 
-        // Criando atendente
-Atendente atendente = new Atendente();
-
-// Adicionando comandos à fila
-atendente.adicionarComando(new ComandoAdicionarItem(pedidoCliente1, pizzaPortuguesa, 2));
-atendente.adicionarComando(new ComandoAdicionarItem(pedidoCliente1, pizzaNordestina, 3));
-
-// Processando os pedidos
-atendente.processarPedidos();
-
+        
 
         if (confirmar == 1) {
             // Solicitando forma de pagamento
